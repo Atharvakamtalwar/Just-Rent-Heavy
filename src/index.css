@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900;
+  }
+}
+
+@layer utilities {
+  .font-cursive {
+    font-family: 'Pacifico', cursive;
+  }
+}
+
+/* Add Pacifico font for the logo */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
