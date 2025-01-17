@@ -13,7 +13,7 @@ export default function Search() {
       category: 'excavator',
       price: 299,
       location: 'New York, NY',
-      image: 'https://source.unsplash.com/800x600/?excavator'
+      image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0'
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Search() {
       category: 'bulldozer',
       price: 399,
       location: 'Los Angeles, CA',
-      image: 'https://source.unsplash.com/800x600/?bulldozer'
+      image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0'
     },
     // Add more mock data as needed
   ];

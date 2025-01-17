@@ -9,14 +9,14 @@ export default function Favorites() {
       title: 'CAT 320 Excavator',
       price: 299,
       location: 'New York, NY',
-      image: 'https://source.unsplash.com/800x600/?excavator'
+      image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0'
     },
     {
-      id: 2,
+      id: 2,  
       title: 'Komatsu D61 Bulldozer',
       price: 399,
       location: 'Los Angeles, CA',
-      image: 'https://source.unsplash.com/800x600/?bulldozer'
+      image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0'
     }
   ];
 
