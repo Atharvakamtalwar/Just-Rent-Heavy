@@ -6,6 +6,8 @@ import Search from "./components/Search";
 import Favorites from "./components/Favorites";
 import Profile from "./components/Profile";
 import { Construction } from "lucide-react";
+import { AuthProvider } from "./components/AuthContext";
+import ProtectedRoute from './components/ProtectedRoute';
 
 function Home() {
   return (
@@ -89,17 +91,20 @@ function Home() {
               {
                 name: "JCB 3DX Backhoe",
                 location: "Mumbai, Maharashtra",
-                image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0",
+                image:
+                  "https://images.unsplash.com/photo-1519452575417-564c1401ecc0",
               },
               {
                 name: "Caterpillar Excavator",
                 location: "Delhi, NCR",
-                image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0",
+                image:
+                  "https://images.unsplash.com/photo-1519452575417-564c1401ecc0",
               },
               {
                 name: "TATA Hitachi Loader",
                 location: "Bangalore, Karnataka",
-                image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0",
+                image:
+                  "https://images.unsplash.com/photo-1519452575417-564c1401ecc0",
               },
             ].map((equipment, index) => (
               <div
@@ -202,18 +207,41 @@ function Home() {
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-900 text-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/add" element={<ListEquipment />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="min-h-screen bg-gray-900 text-white">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/add"
+              element={
+                <ProtectedRoute>
+                  <ListEquipment />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/favorites"
+              element={
+                <ProtectedRoute>
+                  <Favorites />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
